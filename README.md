@@ -1,6 +1,6 @@
 # Dual-Sensor Seismic Alert System
 
-A prototype that combines a piezoelectric vibration sensor and an MPU-6050 accelerometer to trigger a local audible and visual alert. The project includes a breadboard firmware implementation, a separate FFT simulation path, circuit diagrams, etched PCB photos, and MATLAB signal analysis.
+A prototype that combines a piezoelectric vibration sensor and an MPU-6050 accelerometer to trigger a local audible and visual alert. The project includes a breadboard firmware implementation, a separate FFT simulation path, circuit diagrams, Proteus simulation captures, and MATLAB signal analysis.
 
 ## Design overview
 
@@ -19,11 +19,19 @@ The intended architecture has a sensing node and an alarm/gateway node. The sens
 
 *Piezo and MPU-6050 sensing arrangement.*
 
-![Two etched and drilled circuit boards](hardware/pcb-photos/etched_boards_angle_1.jpg)
+![3D preview of the sensing PCB layout](hardware/simulation/pcb_3d_preview.png)
 
-*Physical boards before components were installed. A [second angle](hardware/pcb-photos/etched_boards_angle_2.jpg) is also available.*
+*Digital 3D preview of the proposed sensing board, with component placement. This is a CAD render, not a photograph of an assembled board.*
 
-The [power](hardware/schematics/power_regulation.png), [ESP32 gateway](hardware/schematics/esp32_gateway.png), and [alarm indicator](hardware/schematics/alarm_indicator.png) schematics document the other stages. The [BOM](BOM.md) lists the main parts.
+![Routed PCB design preview](hardware/simulation/pcb_routing_preview.png)
+
+*Routing preview for the same board. The separate [power](hardware/schematics/power_regulation.png), [ESP32 gateway](hardware/schematics/esp32_gateway.png), and [alarm indicator](hardware/schematics/alarm_indicator.png) diagrams cover other stages.*
+
+![Proteus circuit simulation with sensor and filter waveforms](hardware/simulation/proteus_full_simulation.png)
+
+*Proteus simulation of the filter, Arduino Mega stand-in, MPU-6050, and alarm outputs. A [closer waveform view](hardware/simulation/filter_output_waveform.png) shows the filter response; these are simulation captures, not measured breadboard traces.*
+
+The [BOM](BOM.md) lists the main parts.
 
 ### Signal analysis
 
@@ -49,4 +57,4 @@ Open either `.ino` file from its matching sketch folder in Arduino IDE or `ardui
 
 ## Repository contents
 
-`firmware/` contains the two sketches; `matlab/` contains the FFT comparison script; `hardware/schematics/` has the exported circuit figures; `hardware/pcb-photos/` shows the unpopulated boards; `docs/figures/` contains the saved analysis figure. CAD project backups and identifying course documents are outside this source-and-demonstration repository.
+`firmware/` contains the two sketches; `matlab/` contains the FFT comparison script; `hardware/schematics/` has exported circuit figures; `hardware/simulation/` contains CAD previews and Proteus captures; `docs/figures/` contains the saved analysis figure. CAD project backups and identifying documents are outside this source-and-demonstration repository.
