@@ -1,0 +1,97 @@
+<svg width="900" height="340" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+<rect x="0" y="0" width="900" height="340" fill="white"/>
+<text x="20" y="24" font-size="15" font-weight="bold" fill="black">3.2 Dual-Axis Seismic Sensing (MEMS module + Piezo)</text>
+
+<!-- 3V3 rail -->
+<line x1="60" y1="50" x2="660" y2="50" stroke="black" stroke-width="1.5"/>
+<text x="45" y="54" font-size="12" font-weight="bold" fill="black" text-anchor="end">3V3</text>
+
+<!-- MPU-6050 breakout module -->
+<text x="220" y="88" font-size="12" fill="black" text-anchor="middle">U3  MPU-6050 breakout module (GY-521 style)</text>
+<rect x="150" y="100" width="140" height="160" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="220" y="185" font-size="12" fill="black" text-anchor="middle">MPU-6050</text>
+<text x="220" y="202" font-size="10" fill="black" text-anchor="middle">module</text>
+
+<!-- left pins: VIN, GND -->
+<line x1="150" y1="130" x2="120" y2="130" stroke="black" stroke-width="1.5"/>
+<text x="115" y="122" font-size="11" fill="black" text-anchor="end">VIN</text>
+<line x1="150" y1="190" x2="120" y2="190" stroke="black" stroke-width="1.5"/>
+<text x="115" y="182" font-size="11" fill="black" text-anchor="end">GND</text>
+
+<!-- right pins: SDA, SCL, INT -->
+<line x1="290" y1="130" x2="320" y2="130" stroke="black" stroke-width="1.5"/>
+<text x="325" y="122" font-size="11" fill="black">SDA</text>
+<line x1="290" y1="180" x2="320" y2="180" stroke="black" stroke-width="1.5"/>
+<text x="325" y="172" font-size="11" fill="black">SCL</text>
+<line x1="290" y1="230" x2="320" y2="230" stroke="black" stroke-width="1.5"/>
+<text x="325" y="222" font-size="11" fill="black">INT (optional)</text>
+
+<!-- VIN to 3V3 -->
+<line x1="120" y1="130" x2="120" y2="50" stroke="black" stroke-width="1.5"/>
+<circle cx="120" cy="130" r="2.5" fill="black"/>
+
+<!-- GND symbol -->
+<line x1="120" y1="190" x2="100" y2="190" stroke="black" stroke-width="1.5"/>
+<line x1="100" y1="190" x2="100" y2="200" stroke="black" stroke-width="1.5"/>
+<line x1="90" y1="200" x2="110" y2="200" stroke="black" stroke-width="1.5"/>
+<line x1="94" y1="205" x2="106" y2="205" stroke="black" stroke-width="1.5"/>
+<line x1="98" y1="210" x2="102" y2="210" stroke="black" stroke-width="1.5"/>
+
+<!-- SDA flag -->
+<circle cx="320" cy="130" r="2.5" fill="black"/>
+<line x1="320" y1="130" x2="400" y2="130" stroke="black" stroke-width="1.5"/>
+<text x="405" y="134" font-size="11" font-weight="bold" fill="black">SDA</text>
+
+<!-- SCL flag -->
+<circle cx="320" cy="180" r="2.5" fill="black"/>
+<line x1="320" y1="180" x2="400" y2="180" stroke="black" stroke-width="1.5"/>
+<text x="405" y="184" font-size="11" font-weight="bold" fill="black">SCL</text>
+
+<!-- INT flag -->
+<circle cx="320" cy="230" r="2.5" fill="black"/>
+<line x1="320" y1="230" x2="400" y2="230" stroke="black" stroke-width="1.5"/>
+<text x="405" y="234" font-size="11" font-weight="bold" fill="black">INT → ESP32 (spare GPIO)</text>
+
+<text x="20" y="292" font-size="10" fill="black">Module has its own onboard regulator, I2C pull-ups and decoupling — no R3/R4/C6 needed, and AD0 isn't exposed (address fixed by the module, normally 0x68).</text>
+<text x="20" y="310" font-size="10" fill="black">Confirm the module's VIN range against its own datasheet/silkscreen before trusting 3.3V — some clones expect 5V for their onboard regulator to have headroom.</text>
+
+<!-- Piezo vibration sensor module -->
+<text x="590" y="88" font-size="12" fill="black" text-anchor="middle">PZ1  Piezo vibration sensor module</text>
+<rect x="520" y="100" width="140" height="160" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="590" y="185" font-size="12" fill="black" text-anchor="middle">vibration</text>
+<text x="590" y="202" font-size="10" fill="black" text-anchor="middle">sensor module</text>
+
+<!-- left pins: VCC, GND -->
+<line x1="520" y1="130" x2="490" y2="130" stroke="black" stroke-width="1.5"/>
+<text x="485" y="122" font-size="11" fill="black" text-anchor="end">VCC</text>
+<line x1="520" y1="190" x2="490" y2="190" stroke="black" stroke-width="1.5"/>
+<text x="485" y="182" font-size="11" fill="black" text-anchor="end">GND</text>
+
+<!-- right pins: AO, DO -->
+<line x1="660" y1="130" x2="690" y2="130" stroke="black" stroke-width="1.5"/>
+<text x="695" y="122" font-size="11" fill="black">AO</text>
+<line x1="660" y1="190" x2="690" y2="190" stroke="black" stroke-width="1.5"/>
+<text x="695" y="182" font-size="11" fill="black">DO (unused)</text>
+
+<!-- VCC to 3V3 -->
+<line x1="490" y1="130" x2="490" y2="50" stroke="black" stroke-width="1.5"/>
+<circle cx="490" cy="130" r="2.5" fill="black"/>
+
+<!-- GND symbol -->
+<line x1="490" y1="190" x2="470" y2="190" stroke="black" stroke-width="1.5"/>
+<line x1="470" y1="190" x2="470" y2="200" stroke="black" stroke-width="1.5"/>
+<line x1="460" y1="200" x2="480" y2="200" stroke="black" stroke-width="1.5"/>
+<line x1="464" y1="205" x2="476" y2="205" stroke="black" stroke-width="1.5"/>
+<line x1="468" y1="210" x2="472" y2="210" stroke="black" stroke-width="1.5"/>
+
+<!-- AO -> PZ_OUT flag -->
+<circle cx="690" cy="130" r="2.5" fill="black"/>
+<line x1="690" y1="130" x2="740" y2="130" stroke="black" stroke-width="1.5"/>
+<text x="745" y="134" font-size="11" font-weight="bold" fill="black">PZ_OUT → 3.3</text>
+
+<text x="20" y="292" font-size="10" fill="black">Module's "analog output" is the raw piezo signal loaded by an onboard ~1MΩ resistor + 5.1V zener clamp — not amplified.</text>
+<text x="20" y="310" font-size="10" fill="black">That satisfies the R5 bias role (removed, now redundant) and adds knock protection for free. 3.3's gain/filter stage is still required.</text>
+<text x="20" y="328" font-size="10" fill="black">DO (digital threshold output) isn't used — it would discard the frequency info the FFT stage needs. Leave unconnected.</text>
+
+<text x="20" y="330" font-size="10" fill="black">SDA → ESP32 GPIO21, SCL → ESP32 GPIO22 (matching net labels, subsystem 3.5)</text>
+</svg>
